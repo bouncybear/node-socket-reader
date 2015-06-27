@@ -41,7 +41,7 @@ BufferedStreamReader.prototype.read = function(readsize, callback, timeout) {
 		if( timeout ) {
 			if( this.stream.setTimeout ) {
 				this.timeoutHandler = this.onTimeout.bind(this);
-				this.stream.setTimeout(this.timeout, this.timeoutHandler);
+				this.stream.setTimeout(timeout, this.timeoutHandler);
 			} else {
 				console.warn("Stream does not support timeout");
 			}		

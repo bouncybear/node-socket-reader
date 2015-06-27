@@ -1,4 +1,5 @@
 # node-stream-reader
+Buffered stream reader allowing asynchronous requests for a specified number of bytes.
 
 ## Purpose
 Node `ReadableStream` instances allow receiving data as a sequence of asynchronous `data` events or by calling the
