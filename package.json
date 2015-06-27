@@ -5,10 +5,14 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bouncybear/node-stream-reader.git"
+  },
   "directories": {
     "test": "test"
   },
-  "main": "main.js",
+  "main": "stream_reader.js",
   "dependencies": {
     "mocha": "^2.2.5",
     "npm": "^2.11.2"
