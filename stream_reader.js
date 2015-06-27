@@ -23,6 +23,10 @@ function BufferedStreamReader(stream) {
 }
 
 BufferedStreamReader.prototype.read = function(readsize, callback, timeout) {
+	if( this.readCallback ) {
+		callback({message: "Another read operation is already in progress"}, null);
+	}
+
 	if( readsize == 0 ) {
 		callback(null, new Buffer(0));
 	} else if( readsize > 0 && this.currentBuffer && this.currentBuffer.length >= readsize ) {

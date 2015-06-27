@@ -93,7 +93,7 @@ describe("Buffered stream reader", function(){
 		});
 	});
 
-	it("Sequencial reads", function(done){
+	it("Sequential reads get adjacent chunks of the stream", function(done){
 		var mockStream = new MockStream();
 		var reader = new StreamReader(mockStream);
 
@@ -122,6 +122,23 @@ describe("Buffered stream reader", function(){
 		});
 
 		mockStream.emit("data", new Buffer([10,11,12,13,14,15,16,17,18,19]));
+	});
+
+	it("Parallel reads are not allowed", function(done){
+		var mockStream = new MockStream();
+		var reader = new StreamReader(mockStream);
+		
+		reader.read(10, function(err, data){
+			assert.fail("This should not be called since there is not enough data");
+		});
+
+		reader.read(10, function(err, data){
+			assert(!data, "No data sent on error");
+			assert(err != null, "Should receive an error");
+			assert(err.message != null, "Should have an error message");
+
+			done();
+		});
 	});
 
 	it("Read callback receives timeout error for stream that supports 'setTimeout'", function(done){
