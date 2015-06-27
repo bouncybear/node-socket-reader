@@ -1,6 +1,6 @@
-#node-stream-reader
+# node-stream-reader
 
-##Purpose
+## Purpose
 Node `ReadableStream` instances allow receiving data as a sequence of asynchronous `data` events or by calling the
 synchronous `read([size])`. `data` events send blocks of data as it is avaialble, but the number and size of the blocks is unpredicatable, leaving the receiver to wait for and reassemble the desired data. The `read([size])` method will return a block of the requested size if enough data is available, but if not it returns null and the caller must try again.
 
@@ -9,7 +9,7 @@ a specific size.
 
 **node-stream-reader** allows a client to request a block of a specific size via an asynchronous callback. 
 
-##Usage
+## Usage
 ```
 const TIME_OUT_MS = 5000;
 var StreamReader = require('node-stream-reader');
