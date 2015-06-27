@@ -1,0 +1,19 @@
+{
+  "name": "node-stream-reader",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "mocha": "^2.2.5",
+    "npm": "^2.11.2"
+  },
+  "engines": {
+    "node": "0.12.x"
+  }
+}
