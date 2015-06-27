@@ -1,6 +1,6 @@
 {
   "name": "node-stream-reader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
